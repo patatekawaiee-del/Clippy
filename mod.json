@@ -1,16 +1,12 @@
 {
-	"geode": "$GEODE_VERSION",
-	"gd": {
-		"win": "2.2081",
-		"android": "2.2081",
-		"mac": "2.2081",
-		"ios": "2.2081"
-	},
-	"id": "$MOD_ID",
-	"name": "$MOD_NAME",
-	"version": "$MOD_VERSION",
-	"developer": "$MOD_DEVELOPER",
-	"description": "$MOD_DESCRIPTION",
+  "geode": "4.0.0",
+  "gd": { "ios": "2.2074" },
+  "id": "minixx.clippy",
+  "name": "Clippy",
+  "version": "v0.1.0",
+  "developer": "Minixx",
+  "description": "Clippe la dernière run en vidéo."
+}
 	"dependencies": {
 		"geode.node-ids": ">=v1.23.3"
 	}
