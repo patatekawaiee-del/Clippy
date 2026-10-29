@@ -9,7 +9,3 @@
   "developer": "minixx",
   "description": "Clippe la dernière run en vidéo."
 }
-	"dependencies": {
-		"geode.node-ids": ">=v1.23.3"
-	}
-}
