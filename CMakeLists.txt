@@ -13,6 +13,13 @@ project(Template VERSION 1.0.0)
 # Add all source files inside src (recursively)
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 
+# Fichier Objective-C++ (iOS uniquement)
+if ("${CMAKE_SYSTEM_NAME}" STREQUAL "iOS" OR IOS)
+    enable_language(OBJCXX)
+    list(APPEND SOURCES src/RecorderIOS.mm)
+    set_source_files_properties(src/RecorderIOS.mm PROPERTIES COMPILE_FLAGS "-fobjc-arc")
+endif()
+
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
@@ -26,3 +33,10 @@ add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
 
 # Set up dependencies, resources, and link Geode.
 setup_geode_mod(${PROJECT_NAME})
+
+# Frameworks Apple nécessaires à l'enregistrement vidéo
+if ("${CMAKE_SYSTEM_NAME}" STREQUAL "iOS" OR IOS)
+    target_link_libraries(${PROJECT_NAME}
+        "-framework AVFoundation" "-framework CoreMedia"
+        "-framework CoreVideo" "-framework UIKit")
+endif()
