@@ -1,10 +1,12 @@
 {
   "geode": "5.11.2",
-  "gd": { "ios": "2.2081" },
+  "gd": {
+    "ios": "2.2081"
+  },
   "id": "minixx.clippy",
   "name": "Clippy",
-  "version": "v0.1.0",
-  "developer": "Minixx",
+  "version": "v1.0.0",
+  "developer": "minixx",
   "description": "Clippe la dernière run en vidéo."
 }
 	"dependencies": {
