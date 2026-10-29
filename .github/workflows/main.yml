@@ -1,0 +1,24 @@
+name: Build iOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the mod
+        uses: geode-sdk/build-geode-mod@main
+        id: build
+        with:
+          target: iOS
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RunClip-iOS
+          path: ${{ steps.build.outputs.build-output }}
